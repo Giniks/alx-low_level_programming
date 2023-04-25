@@ -1,17 +1,17 @@
 #include <stdio.h>
 /**
- * main - print the lower case alphabet
+ * main - print the lower case alphabet in reverse format
  * Return: Always 0
  */
 int main(void)
 {
-	char letter;
+	char le;
 	{
-		for (letter = 'z"; letter >= 'a'; letter--)
+		for (le = 'z'; le >= 'a'; le--)
 		{
-			putchar(letter);
+			putchar(le);
 		}
 	}
-	putchar("\n");
+	putchar('\n');
 	return (0);
 }
