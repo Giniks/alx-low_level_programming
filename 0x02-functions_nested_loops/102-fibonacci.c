@@ -8,7 +8,7 @@
 int main(void)
 {
 	int c;
-	long int n1, n2, fn;
+	int n1, n2, fn;
 
 	n1 = 1;
 	n2 = 2;
@@ -17,7 +17,7 @@ int main(void)
 	for (c = 0; c < 48; c++)
 	{
 		fn = n1 + n2;
-		printf(",%d", fn);
+		printf(",%ld", fn);
 		n1 = n2;
 		n2 = fn;
 	}
