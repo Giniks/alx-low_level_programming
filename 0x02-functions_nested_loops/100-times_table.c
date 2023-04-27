@@ -3,6 +3,15 @@
 void print_times_table(int n);
 
 /**
+ * main - print times table
+ * Return: Always 0
+ */
+int main(void)
+{
+	print_times_table(2);
+	return (0);
+}
+/**
  * print_times_table - prints the n times table
  *
  * @n: number times table(0 < n <= 15)

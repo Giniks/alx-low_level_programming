@@ -14,7 +14,7 @@ int main(void)
  * Return: Always 0
  */
 {
-	times_table();
+	time_table();
 	return (0);
 }
 void times_table(void)
