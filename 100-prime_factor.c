@@ -6,17 +6,24 @@
  */
 int main(void)
 {
-	long int n, fp;
+	long int num = 612852475143;
+	long int div = 2;
+	long int largest_prime = 0;
 
-	n = 612852475143;
-	for (fp = 2; fp <= n; fp++)
+	while (num != 0)
 	{
-		if (n % fp == 0)
+		if (num % div != 0)
+			div++;
+		else
 		{
-			n /= fp;
-			fp--;
+			largest_prime = num;
+			num = num / div;
+			if (num == 1)
+			{
+				printf("%ld\n", largest_prime);
+				break;
+			}
 		}
 	}
-	printf("%ld\n", fp);
 	return (0);
 }
