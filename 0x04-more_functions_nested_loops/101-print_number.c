@@ -1,8 +1,8 @@
-
 #include "main.h"
 
 /**
  * print_number - pints an integer
+ * print_numbers - print an integer
  * @n: input integer
  * Return: no return
  */
