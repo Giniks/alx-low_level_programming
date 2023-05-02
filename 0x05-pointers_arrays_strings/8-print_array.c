@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_array - prints array of integers
- * @n: number of element of the array to be printed
- * @a: elements of array
+ * print_array - prints n elements 9f an array
+ * @a: array
+ * @n: number of values to be printed
  */
 void print_array(int *a, int n)
 {
@@ -16,6 +16,6 @@ void print_array(int *a, int n)
 			printf(", ");
 	}
 
-	printf('\n');
+	printf("\n");
 }
 
