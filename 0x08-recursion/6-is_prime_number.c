@@ -1,4 +1,4 @@
-#include "msin.h"
+#include "main.h"
 
 /**
  * sqrt_helper - recursive helper function to calculate square root
