@@ -1,36 +1,29 @@
 #include "main.h"
+int actual_prime(int n, int i);
 
 /**
- * sqrt_helper - recursive helper function to calculate square root
- *
- * @n: the number to find the square root of
- * @guess: the current guess for the square root
- * Return: return the natural square root of n, -1 if it has no natura
- * square root.
+ * is_prime_number - says if an integer is a prime number or not
+ * @n: number to be evaluated
+ * Return: return 1 if its a prime number and 0 if it is not
  */
-int sqrt_helper(int n, int guess)
+int is_prime_number(int n)
 {
-	if (guess * guess == n)
-		return (guess);
-
-	if (guess * guess > n)
-		return (-1);
-
-	return (sqrt_helper(n, guess + 1));
+	if (n <= 1)
+		return (0);
+	return (actual_prime(n, n - 1));
 }
-
 /**
- * _sqrt_recursion - calculate the natural square root of a number
+ * actual_prime - calculates if the number is prime recursively
+ * @n: number to evaluate
+ * @i: iterator
  *
- * @n: the numner to find square root of
- *
- * Return: the natural square root of n, -1 if it has no natural square
- * root
+ * Return: 1 if n is a prime number,0 if not
  */
-int _sqrt_recursion(int n)
+int actual_prime(int n, int i)
 {
-	if (n < 0)
-		return (-1);
-
-	return (sqrt_helper(n, 0));
+	if (i == 1)
+		return (1);
+	if (n % i == 0 && i > 0)
+		return (0);
+	return (actual_prime(n, i - 1));
 }
