@@ -1,35 +1,41 @@
 #include "main.h"
-
+int check_pal(char *s, int i int len);
+int _strlen_recursion(char *s);
 /**
- * _sqrt - Calculates the square root of a number using recursion
+ * is_palindrome - checks if a string is a palindrome
+ * @s: string to reverse
  *
- * @n: The number to find the square root of
- * @i: The current integer to check
- *
- * Return: The natural square root of n, or -1 if n has no natural square root
+ * Return: 1 if it is, 0 if its not
  */
-int _sqrt(int n, int i)
+int is_palindrome(char *s)
 {
-	if (i * i == n)
-		return (i);
-	else if (i * i > n)
-		return (-1);
-	else
-		return (_sqrt(n, i + 1));
+	if (*s == 0)
+		return (1);
+	return (check_pal(s, 0, _strlen_recursion(s)));
 }
 /**
- * _sqrt_recursion - Returns the natural square root of a number
- *
- * @n: The number to find the square root of
- *
- * Return: The natural square root of n, or -1 if n has no natural square root
+ * _strlen_recursion - returns the length of string recursively
+ * @s: string to calculate the length
+ * Return: length of string
  */
-int _sqrt_recursion(int n)
+int _strlen_recursion(char *s)
 {
-	if (n < 0)
-		return (-1);
-	else if (n == 0)
+	if (*s == '\0')
 		return (0);
-	else
-		return (_sqrt(n, 1));
+	return (1 + _strlen_recursion(s + 1));
+}
+/**
+ * check_pal - checks the character recursively for palindrome
+ * @s: string to check
+ * @i: iterator
+ * @len: length of the string
+ * Return: 1 if palindrome, 0 if not
+ */
+int check_pal(char *s, int i, int len)
+{
+	if (*(s + 1) != *(s + len - 1))
+		return (0);
+	if (i >= len)
+		return (1);
+	return (check_pal(s, i + 1, len - 1));
 }
