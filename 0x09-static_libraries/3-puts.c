@@ -1,22 +1,10 @@
-@include "main.h"
-
-/**
- * _puts - prints a string
- *
- * @s: string of character to be printed
- *
- * Return: void
- */
-void _puts(char *str)
+#include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
-/**
- * main - Entry point
- *
- * Return: Always 0 (success)
- */
-int main(void)
+void _puts(char *s)
 {
-	puts("\"Programming is like building a multilingual puzzle");
-	return (0);
+	puts(s);
 }
