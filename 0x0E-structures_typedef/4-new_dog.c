@@ -27,17 +27,17 @@ int _strlen(char *s)
  * in which we copy the string
  * @src: string to be copied
  *
- * Return: thw pointer to the destination
+ * Return: the pointer to the destination
  */
 char *_strcpy(char *dest, char *src)
 {
-	int len i;
+	int len, i;
 
 	len = 0;
 
 	while (src[len] != '\0')
 	{
-		len++
+		len++;
 	}
 
 	for (i = 0; i < len; i++)
@@ -64,7 +64,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int len1, len2;
 
 	len1 = _strlen(name);
-	ĺen2 = _strlen(owner);
+	len2 = _strlen(owner);
 
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
