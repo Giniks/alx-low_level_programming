@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 /**
- * prints_all - prints everyting
+ * print_all - prints everyting
  * @format: list of types of arguments
  * passed to the function
  */
