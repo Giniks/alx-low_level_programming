@@ -8,7 +8,7 @@
  * @...: varaiable number of parameters to calculate
  * the sum of.
  *
- * Retun: if n == 0, return 0
+ * Return: if n == 0, return 0
  * otherwise th sum_of_all the parameters
  */
 int sum_them_all(const unsigned int n, ...)
