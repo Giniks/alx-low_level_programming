@@ -10,7 +10,7 @@
  *
  * Return: Always 0
  */
-int main(int _attritbute_((_unused_)) argc, char *argv[])
+int main(int __attritbute__((__unused__)) argc, char *argv[])
 {
 	int num1, num2;
 	char *op;
