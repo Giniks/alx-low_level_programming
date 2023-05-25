@@ -3,9 +3,8 @@
 #include <stdarg.h>
 /**
  * print_numbers - prints numbers followed by a new line
- * @seperator: the string to be printed between numbers
+ * @separator: the string to be printed between numbers
  * @n: the number of integers passed to the function
- * @...: a variable number of numbers to be printed
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
