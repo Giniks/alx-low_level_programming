@@ -21,11 +21,11 @@ int main(void)
 	add_nodeint_end(&head, 4);
 	add_nodeint_end(&head, 98);
 	add_nodeint_end(&head, 402);
-	add_n0deint_end(&head, 1024);
+	add_nodeint_end(&head, 1024);
 	print_listint(head);
 	n = pop_listint(&head);
 	printf("- %d\n", n);
-	priny_listint(head);
+	print_listint(head);
 	n = pop_listint(&head);
 	printf("- %d\n", n);
 	print_listint(head);
