@@ -13,6 +13,7 @@ void close_file(int fd);
 char *create_buffer(char *file)
 {
 	char *buffer = malloc(sizeof(char) * 1024);
+
 	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
@@ -23,7 +24,7 @@ char *create_buffer(char *file)
 
 /**
  * close_file - closes the file
- * @fs: file descriptor to be closed
+ * @fd: file descriptor to be closed
  */
 void close_file(int fd)
 {
@@ -41,7 +42,7 @@ void close_file(int fd)
  * main - copies the content of a file to another file
  * @argc: Number of arguments
  * @argv: An array of pointers to the arguments
- * 
+ *
  * Return: 0 on success
  * if argument count is incorrect exit with code 97
  * if file_from does not exist or cannot be read exit with code 98
@@ -59,15 +60,14 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	
+
 	buffer = create_buffer(argv[1]);
 	file_from = open(argv[1], O_RDONLY);
 	byte_read = read(file_from, buffer, 1024);
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	byte_written = write(file_to, buffer, byte_read);
 
-	do{
-		if (file_from == -1)
+	do {
+		if (file_from == -1 || byte_read == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
 			free(buffer);
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 		}
 		byte_written = write(file_to, buffer, byte_read);
 
-		if (file_to == -1 || byte_written == -1)
+		if (file_to == -1 || byte_written == -1 || byte_written != byte_read)
 		{
 			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
 			free(buffer);
@@ -84,8 +84,7 @@ int main(int argc, char *argv[])
 
 		byte_read = read(file_from, buffer, 1024);
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
-	}
-	while (byte_read > 0);
+	} while (byte_read > 0);
 
 	free(buffer);
 	close(file_from);
