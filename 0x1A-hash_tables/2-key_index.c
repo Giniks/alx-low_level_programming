@@ -1,4 +1,4 @@
-#include "hash_table_t"
+#include "hash_tables.h"
 
 /**
  * key_index - the function that finds the index of the key(value)
@@ -12,5 +12,5 @@
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	return (hash_djb2 (key) % size);
+	return (hash_djb2(key) % size);
 }
