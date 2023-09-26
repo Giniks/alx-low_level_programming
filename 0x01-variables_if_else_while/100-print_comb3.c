@@ -18,7 +18,7 @@ int main(void)
 			}
 			if (i == j)
 			{
-				continue,
+				continue;
 			}
 			if (i == '8' && j == '9')
 			{
