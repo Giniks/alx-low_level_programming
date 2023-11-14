@@ -2,7 +2,7 @@
 #include <math.h>
 
 /**
- * jump_search - searches for array value of integers 
+ * jump_search - searches for array value of integers
  * using the Jump search algorithm
  *
  * @array: a pointer to the first element of the array
